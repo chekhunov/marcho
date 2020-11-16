@@ -252,6 +252,7 @@ Thumbs.db
 .idea/
 .idea/*
 .vscode
+.history/
 .history/*
 *.sublime*
 npm-debug.*
