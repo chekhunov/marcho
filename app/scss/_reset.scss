@@ -24,8 +24,8 @@ h4,
 h5,
 h6,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
@@ -44,6 +44,10 @@ img {
   display: block;
 }
 
+a {
+  text-decoration: none;
+}
+
 input,
 button,
 textarea,
@@ -51,6 +55,4 @@ select {
   font: inherit;
 }
 
-a {
-  text-decoration: none;
-}
+
