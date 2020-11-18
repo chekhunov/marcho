@@ -256,6 +256,7 @@ Thumbs.db
 .history/*
 *.sublime*
 npm-debug.*
+.bash_profile.save
 
 dist/
 package-lock.json
