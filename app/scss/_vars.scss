@@ -23,3 +23,11 @@ $bg: #f6f6f6; // темные места фона
   font-weight: 700;
 }
 
+%btn{
+  padding: 12px 26px;
+  background-color: $accent;
+  text-transform: uppercase;
+  color: #ffffff;
+  @extend %roboto-400;
+  box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+}
