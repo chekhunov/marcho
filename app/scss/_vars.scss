@@ -1,7 +1,7 @@
 $accent: #fe3e57;
-$default: #8d8d8d;
-$title: #29282d;
-$bg: #f6f6f6;
+$default: #8d8d8d; //шрифт
+$title: #29282d; // заголовки
+$bg: #f6f6f6; // темные места фона
 
 %quicksand-400{
   font-family: 'Quicksand-Regular', sans-serif;
@@ -23,3 +23,11 @@ $bg: #f6f6f6;
   font-weight: 700;
 }
 
+%btn{
+  padding: 12px 26px;
+  background-color: $accent;
+  text-transform: uppercase;
+  color: #ffffff;
+  @extend %roboto-400;
+  box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+}
