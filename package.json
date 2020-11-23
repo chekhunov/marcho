@@ -399,6 +399,7 @@
     "yargs-parser": "^5.0.0-security.0"
   },
   "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "browser-sync": "^2.26.13",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
