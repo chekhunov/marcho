@@ -240,7 +240,7 @@
   &__inner {
     background-image: url("../images/decor/categories-right.svg");
     background-repeat: no-repeat;
-   background-position: center right;
+    background-position: center right;
   }
 }
 
@@ -251,18 +251,18 @@
   position: relative;
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
   }
-  &::before{
+  &::before {
     background-image: url("../images/decor/info-befor-bg.svg");
     top: -40px;
     left: -45px;
     width: 120px;
     height: 121px;
   }
-  &::after{
+  &::after {
     background-image: url("../images/decor/info-after-bg.svg");
     bottom: -23px;
     right: -23px;
@@ -344,17 +344,17 @@
   }
 }
 
-.video-fashion{
+.video-fashion {
   background-color: $bg;
-  background-image: url('../images/decor/fashion.svg');
+  background-image: url("../images/decor/fashion.svg");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
   padding: 125px 0;
-  &__inner{
+  &__inner {
     display: flex;
   }
-  &__popup{
+  &__popup {
     margin-right: 60px;
     max-width: 530px;
     width: 100%;
@@ -365,26 +365,140 @@
     background-repeat: no-repeat;
     background-position: center center;
   }
-  &__content{
+  &__content {
     max-width: 570px;
   }
-  &__subtitle{
+  &__subtitle {
     padding-top: 75;
     font-size: 22px;
     color: $accent;
     text-transform: uppercase;
     margin-bottom: 5px;
   }
-  &__title{
+  &__title {
     text-align: left;
   }
-  &__text{
+  &__text {
     margin-bottom: 55px;
   }
-  &__link{
+  &__link {
     @extend %btn;
   }
 }
 
+.product {
+  padding: 105px 0 120px;
+  text-align: center;
+  &__items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); //бьет 3 колонки
+    grid-gap: 45px 30px; //расстояние между
+  }
+  &__link{
+    text-transform: uppercase;
+    color: $title;
+    display: inline-block;
+    border: 1px solid $accent;
+    padding: 14px 27px;
+    margin-top: 55px;
+  }
+}
+
+.product-item {
+  max-width: 370px;
+  text-align: center;
+  &__img-box {
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+  &__link-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    background-color: #fff;
+    width: 220px;
+    height: 50px;
+    margin: 0 auto;
+    box-shadow: 0 5px 30px 0 rgba(152, 152, 152, 0.2);
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateY(300%); //и табличка уезжает чучуть ниже и изза того что выше написано overflow: hidden эта функция скрывает блок которому написан transform
+    transition: all 0.3s;
+  }
+  &__link--line::before,
+  &__link--line::after{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 1px;
+    height: 30px;
+    background-color: #ececec;
+    top: 10px;
+  }
+  &__link--line::before{
+    left: 70px;
+  }
+  &__link--line::after{
+    right: 70px;
+  }
+  &__linl{
+    display: inherit; //наследует родителя
+    path{
+      transition: all 0.3s;
+    }
+  }
+  &__link:hover{
+    path{
+      fill: $accent;
+    }
+  }
+
+  &__images{
+    object-fit: cover;
+  }
+  &:hover{
+    .product-item__link-box{
+      transform: translateY(0); // благодаря этому теперь при наведене на блок будет появлятся тот блок сылок которому поставлен трансформ 300%
+    }
+  }
+  &__title{
+    color: $title;
+    padding: 15px 0 20px;
+  }
+  &__price{
+    display: flex;
+    justify-content: center;
+    @extend %roboto-400;
+
+  }
+  &__new-price{
+    padding: 0 12px;
+    color: $title;
+  }
+  &__old-price{
+    padding: 0 12px;
+    text-decoration: line-through; //перечеркивает число по середине
+  }
+  &--sale{
+    .product-item__img-box::before{
+      content: "SALE";
+      @extend %btn;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      line-height: 1;
+    }
+  }
+}
+
+
+.star{
+  margin: 0 auto;
+}
 
 @import "media"; // адаптив
