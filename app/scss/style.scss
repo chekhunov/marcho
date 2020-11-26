@@ -389,12 +389,12 @@
 .product {
   padding: 105px 0 120px;
   text-align: center;
-  &__items{
+  &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr); //бьет 3 колонки
     grid-gap: 45px 30px; //расстояние между
   }
-  &__link{
+  &__link {
     text-transform: uppercase;
     color: $title;
     display: inline-block;
@@ -427,11 +427,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    transform: translateY(300%); //и табличка уезжает чучуть ниже и изза того что выше написано overflow: hidden эта функция скрывает блок которому написан transform
+    transform: translateY(
+      300%
+    ); //и табличка уезжает чучуть ниже и изза того что выше написано overflow: hidden эта функция скрывает блок которому написан transform
     transition: all 0.3s;
   }
   &__link--line::before,
-  &__link--line::after{
+  &__link--line::after {
     content: "";
     position: absolute;
     background-color: #fff;
@@ -440,52 +442,53 @@
     background-color: #ececec;
     top: 10px;
   }
-  &__link--line::before{
+  &__link--line::before {
     left: 70px;
   }
-  &__link--line::after{
+  &__link--line::after {
     right: 70px;
   }
-  &__linl{
+  &__linl {
     display: inherit; //наследует родителя
-    path{
+    path {
       transition: all 0.3s;
     }
   }
-  &__link:hover{
-    path{
+  &__link:hover {
+    path {
       fill: $accent;
     }
   }
 
-  &__images{
+  &__images {
     object-fit: cover;
   }
-  &:hover{
-    .product-item__link-box{
-      transform: translateY(0); // благодаря этому теперь при наведене на блок будет появлятся тот блок сылок которому поставлен трансформ 300%
+  &:hover {
+    .product-item__link-box {
+      transform: translateY(
+        0
+      ); // благодаря этому теперь при наведене на блок будет появлятся тот блок сылок которому поставлен трансформ 300%
     }
   }
-  &__title{
+  &__title {
     color: $title;
     padding: 15px 0 20px;
   }
-  &__price{
+  &__price {
     display: flex;
     justify-content: center;
     @extend %roboto-400;
-
   }
-  &__new-price{
+  &__new-price {
     padding: 0 12px;
     color: $title;
   }
-  &__old-price{
+  &__old-price {
     padding: 0 12px;
     text-decoration: line-through; //перечеркивает число по середине
   }
-  &--sale{
-    .product-item__img-box::before{
+  &--sale {
+    .product-item__img-box::before {
       content: "SALE";
       @extend %btn;
       position: absolute;
@@ -496,9 +499,70 @@
   }
 }
 
-
-.star{
+.star {
   margin: 0 auto;
+}
+
+.promo {
+  background-image: url("../images/promo-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 150px 0 160px;
+  text-align: center;
+  &__inner {
+    max-width: 570px;
+    width: 100%;
+    margin-left: auto;
+  }
+  &__subtitle {
+    margin-bottom: 10px;
+    color: $accent;
+    text-transform: uppercase;
+    font-size: 22px;
+  }
+  &__clock{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+  } 
+  &__clock-item{
+    background-color: #fff;
+    width: 120px;
+    height: 120px; 
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    span{
+      font-size: 48px;
+      @extend %roboto-700;
+      margin: 12px 0 7px;
+      color: $title;
+    }
+  }
+  &__text{
+    
+  }
+  &__link {
+    text-transform: uppercase;
+    color: $title;
+    display: inline-block;
+    border: 1px solid $accent;
+    padding: 14px 27px;
+    margin-top: 55px;
+  }
+}
+
+.partners{
+  padding-top: 75px;
+  &__list{
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 @import "media"; // адаптив
