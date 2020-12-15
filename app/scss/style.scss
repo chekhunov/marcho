@@ -3,6 +3,7 @@
 @import "reset"; //сброс всех стилей
 @import "libs"; // подключение сторонних библиотек
 @import "global"; // подключение глобальных стилей типо reset.css, то что на body для сылок
+@import "shop/shop";
 
 .header {
   padding: 40px 0; //отступ верх и низ в хеддере
@@ -159,8 +160,8 @@
   }
 }
 
-.top{
-  &__container{
+.top {
+  &__container {
     max-width: 1700px;
     margin: 0 auto;
     background-repeat: no-repeat;
@@ -170,7 +171,6 @@
     text-align: center;
   }
 }
-
 
 .top-slider {
   background-image: url("../images/decor/top-slider-bg.png");
@@ -420,6 +420,86 @@
 .product-item {
   max-width: 370px;
   text-align: center;
+  &.product-item--list {
+    min-width: 100%;
+    display: flex;
+    text-align: left;
+    &:hover {
+      .product-item__link-box {
+        transform: translateY(-280%);
+      }
+    }
+    .product-item__img-box {
+      height: 250px;
+      min-width: 200px;
+      margin-bottom: 0;
+      img {
+        height: 250px;
+      }
+    }
+    .product-item__text{
+      margin-bottom: 25px;
+    }
+    .product-item__btn{
+      color: #fff;
+      padding: 11px 40px;
+      background-color: $title;
+      border: none;
+      cursor: pointer;
+      &:hover{
+        background-color: $accent;
+        box-shadow: 0 7px 20px 0 rgba(255, 17, 48, 0.3);
+      }
+    }
+    .product-item__link-box {
+      background-color: transparent;
+      width: 115px;
+      box-shadow: none;
+      bottom: auto;
+      .product-item__link {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .product-item__link--line {
+        display: none;
+      }
+    }
+    .product-item__content-box {
+      display: block;
+    }
+
+    .product-item__title {
+      order: -1;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+    .product-item__price {
+      order: -1;
+      margin-left: -12px;
+    }
+    .star{
+      margin-left: 23px;
+    }
+    .product-item__box {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .product-item__wrapper-box {
+      padding: 30px 40px;
+      border: 1px solid #ececec;
+      border-left: none;
+    }
+  }
+
+  &__content-box {
+    display: none;
+  }
   &__img-box {
     position: relative;
     height: 370px;
@@ -555,7 +635,7 @@
       color: $title;
     }
   }
-  
+
   &__link {
     text-transform: uppercase;
     color: $title;
@@ -585,14 +665,14 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    &::after{
+    &::after {
       content: "";
       position: absolute;
       top: -25px;
       right: -20px;
       width: 126px;
       height: 53px;
-      background-image: url('../images/decor/blog-decor.svg');
+      background-image: url("../images/decor/blog-decor.svg");
     }
   }
   &__item {
@@ -604,7 +684,7 @@
       border: none;
       .blog__item-link {
         color: $accent;
-        &::after{
+        &::after {
           background-image: url("../images/blog/arrow-blog.svg");
         }
       }
@@ -663,29 +743,29 @@
   }
 }
 
-.modal{
+.modal {
   padding-top: 100px;
   max-width: 570px;
   margin: 0 auto 115px;
-  &__links{
+  &__links {
     text-align: center;
     margin-bottom: 40px;
   }
-  &__link{
+  &__link {
     color: #909090;
     font-size: 22px;
     @extend %roboto-400;
     text-transform: uppercase;
     margin: 0 30px;
   }
-  &__link--active{
+  &__link--active {
     color: $accent;
   }
-  &__label{
+  &__label {
     display: block;
     margin-bottom: 30px;
   }
-  &__input{
+  &__input {
     display: block;
     width: 100%;
     border: none;
@@ -694,7 +774,7 @@
     height: 60px;
     padding: 0 15px;
   }
-  &__btn{
+  &__btn {
     display: block;
     background-color: $title;
     text-transform: uppercase;
@@ -706,40 +786,39 @@
     width: 100%;
     cursor: pointer;
   }
-  &__error{
+  &__error {
     margin-top: 12px;
     color: $accent;
     display: inline-block;
   }
 
-  &__text{
+  &__text {
     margin-bottom: 25px;
   }
 }
 
-.page-404{
+.page-404 {
   padding: 110px 0 120px;
-  &__inner{
+  &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__content{
+  &__content {
     max-width: 570px;
     width: 100%;
   }
-  &__title{
+  &__title {
     color: #28384f;
     margin-bottom: 40px;
     @extend %roboto-700;
     font-size: 48px;
   }
-  &__text{
+  &__text {
     margin-bottom: 55px;
     max-width: 470px;
-
   }
-  &__link{
+  &__link {
     background-color: $accent;
     text-transform: uppercase;
     color: #fff;
@@ -748,6 +827,5 @@
     box-shadow: 0px 5px 25px 0px rgba(254, 62, 87, 0.35);
   }
 }
-
 
 @import "media"; // адаптив
